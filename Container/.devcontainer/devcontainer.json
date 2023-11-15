@@ -1,37 +1,23 @@
-// .devcontainer/devcontainer.json
 {
-  "name": "Ubuntu with GCC and Valgrind",
-  "dockerFile": "Dockerfile",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-    "ms-vscode.cpptools"
-  ],
-  "runArgs": [
-    "--cap-add=SYS_PTRACE",
-    "--security-opt",
-    "seccomp=unconfined"
-  ],
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
-  "remoteUser": "vscode",
-  "workspaceFolder": "/CartellaContainer",
-  "shutdownAction": "stopCompose",
-  "services": [
-    {
-      "name": "devcontainer",
-      "image": "mcr.microsoft.com/vscode/devcontainers/cpp:0-ubuntu-22.04",
-      "containerName": "vscode-devcontainer-my_project",
-      "runArgs": [
+	"name": "Ubuntu + gcc + valgrind",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": {"terminal.integrated.shell.linux": "/bin/bash"},
+			"extensions": ["ms-vscode.cpptools"]
+		}
+	},
+
+	"runArgs": [
         "--cap-add=SYS_PTRACE",
         "--security-opt",
         "seccomp=unconfined"
-      ],
-      "workspaceFolder": "/CartellaContainer",
-      "user": "vscode"
-    }
-  ]
+	],
+
+	"remoteUser": "vscode",
+	"shutdownAction": "stopContainer"
+  	//"workspaceFolder": "/CartellaContainer", // -> vedi dockerfile
 }

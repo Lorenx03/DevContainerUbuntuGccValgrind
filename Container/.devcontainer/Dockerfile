@@ -1,5 +1,4 @@
-# .devcontainer/Dockerfile
-FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-ubuntu-22.04
+FROM mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04
 
 # Install additional packages
 RUN apt-get update \
@@ -10,9 +9,13 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a folder named "CartellaContainer" and set permissions
-RUN mkdir /CartellaContainer \
-    && chmod 777 /CartellaContainer
-    
-# Set the working directory to /CartellaContainer
-WORKDIR /CartellaContainer
+
+# Se si vuole utilizzare una cartella nel container 
+#RUN mkdir /CartellaContainer \
+#    && chmod 777 /CartellaContainer
+
+#WORKDIR /CartellaContainer
+
+
+# Per sincronizzare i contenuti della cartella nel container con la cartella dell'host esegure questo comando
+# find /workspaces -type d -name "Container" -exec rsync -a /CartellaContainer {} \;

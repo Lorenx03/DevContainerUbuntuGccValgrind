@@ -7,6 +7,7 @@ File di configurazione per dev container basato su Ubuntu 22.04 con gcc e valgri
 - Installare docker sul vostro sistema: [Download Docker](https://docs.docker.com/get-docker/)
 - Dopo aver installato VSCode installare questa estensione: [Download estensione DevContainer](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 - Clonare questa repo in una cartella sul vostro computer
+- (Opzionale) Spostare la cartella "Container" da qualche altra parte
 
 ## Uso
 - Avviare Docker

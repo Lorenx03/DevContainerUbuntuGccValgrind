@@ -1,4 +1,5 @@
 # Ubuntu + gcc + valgrind
+![NeofetchVSCode](https://user-images.githubusercontent.com/48184667/283203418-e4d9bad7-12ad-4548-b94a-0600ba606386.png)
 File di configurazione per dev container basato su Ubuntu 22.04 con gcc e valgrind pre-installati
 
 ## Installazione

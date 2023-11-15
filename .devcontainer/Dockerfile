@@ -10,8 +10,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a folder named "CartellaContainer"
-RUN mkdir /CartellaContainer
-
+# Create a folder named "CartellaContainer" and set permissions
+RUN mkdir /CartellaContainer \
+    && chmod 777 /CartellaContainer
+    
 # Set the working directory to /CartellaContainer
 WORKDIR /CartellaContainer
